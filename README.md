@@ -17,7 +17,7 @@ Here is a simple `docker-compose` file:
 ```yaml
 services:
   prowlarr:
-    image: firelightflagbot/prowlarr:latest
+    image: firelightflagbot/prowlarr:1.8.6.3946
     user: 1234:1234 # This is the default uid/gid, you can change it.
     ports:
       - 9696:9696
