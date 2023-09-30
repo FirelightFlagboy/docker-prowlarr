@@ -1,0 +1,4 @@
+.git*
+.editorconfig
+.env
+README.md
