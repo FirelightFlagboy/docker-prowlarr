@@ -2,28 +2,14 @@
 
 FROM --platform=$BUILDPLATFORM alpine:3.18 as builder
 
-COPY --link pkg_info.json /pkg_info.json
+COPY --link pkg-info.json /pkg-info.json
 
 ARG PKG_VERSION
 ARG TARGETARCH
 
-RUN <<EOF
-set -eux -o pipefail
+COPY --link in-docker-build.sh /build.sh
 
-apk add jq
-
-PKG_FILENAME=$(jq -r ".versions[\"${PKG_VERSION}\"].${TARGETARCH}.filename" /pkg_info.json)
-PKG_SHA512_DIGEST=$(jq -r ".versions[\"${PKG_VERSION}\"].${TARGETARCH}.sha512" /pkg_info.json)
-
-PKG_ARCH_FILE=/tmp/prowlarr.linux-musl-core.tar.gz
-
-wget -O ${PKG_ARCH_FILE} https://github.com/Prowlarr/Prowlarr/releases/download/v${PKG_VERSION}/${PKG_FILENAME}
-echo "${PKG_SHA512_DIGEST} ${PKG_ARCH_FILE}"| sha512sum -c -
-mkdir -p /opt/prowlarr
-tar --directory=/opt/prowlarr --extract --gzip --file ${PKG_ARCH_FILE} --strip-components=1
-rm -rf /opt/prowlarr/Prowlarr.Update
-rm ${PKG_ARCH_FILE}
-EOF
+RUN sh /build.sh
 
 FROM alpine:3.18
 
