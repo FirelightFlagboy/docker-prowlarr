@@ -11,17 +11,17 @@ on:
     paths:
       - Dockerfile
       - .dockerignore
-      - pkg_info.json
+      - pkg-info.json
   pull_request:
     paths:
       - Dockerfile
       - .dockerignore
-      - pkg_info.json
+      - pkg-info.json
     branches: ["main"]
 
 jobs:
   build:
-    uses: FirelightFlagboy/gh-actions-workflows-docker-services/.github/workflows/docker-build-publish.yml@fa20b78c37834b0b275e8e57cadddd5e126d91ce
+    uses: FirelightFlagboy/gh-actions-workflows-docker-services/.github/workflows/docker-build-publish.yml@aab594706e19dd4afe38efa7bbc4c3de33dff0b3
     permissions:
       contents: read
       # This is used to complete the identity challenge
