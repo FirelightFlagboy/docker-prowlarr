@@ -4,12 +4,15 @@ on:
   schedule:
     - cron: 0 5 1 * * # every 1st day of the month
   workflow_dispatch:
+  pull_request:
+    paths:
+      - .github/workflows/pkg-info.yml
 
 jobs:
   update-pkg:
-    uses: FirelightFlagboy/gh-actions-workflows-docker-services/.github/workflows/update-pkg-info.yml@2ecaff69c02786a6dc0dd418af3dfabd4902206b
+    uses: FirelightFlagboy/gh-actions-workflows-docker-services/.github/workflows/update-pkg-info.yml@aab594706e19dd4afe38efa7bbc4c3de33dff0b3
     permissions:
       contents: write
       pull-requests: write
     with:
-      pkg-info-path: pkg_info.json
+      pkg-info-path: pkg-info.json
