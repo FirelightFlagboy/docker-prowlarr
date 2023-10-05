@@ -20,7 +20,7 @@ LABEL org.opencontainers.image.description="Prowlarr is an indexer manager/proxy
 LABEL org.opencontainers.image.version=${PKG_VERSION}
 LABEL org.opencontainers.image.title="Prowlarr"
 
-COPY --from=builder /opt/prowlarr /opt
+COPY --from=builder /opt/prowlarr /opt/prowlarr
 RUN apk --no-cache add icu-libs sqlite-libs
 
 USER 1234:1234
