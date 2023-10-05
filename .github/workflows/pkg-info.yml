@@ -7,7 +7,7 @@ on:
 
 jobs:
   update-pkg:
-    uses: FirelightFlagboy/gh-actions-workflows-docker-services/.github/workflows/update-pkg-info.yml@2ecaff69c02786a6dc0dd418af3dfabd4902206b
+    uses: FirelightFlagboy/gh-actions-workflows-docker-services/.github/workflows/update-pkg-info.yml@94b0548e9e1328251f202524ad609a83f97385d3
     permissions:
       contents: write
       pull-requests: write
