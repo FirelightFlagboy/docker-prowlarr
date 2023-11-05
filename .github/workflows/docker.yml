@@ -6,22 +6,25 @@ on:
       pkg-version:
         type: string
         description: The version of the package
+        default: ''
+        required: false
   push:
     branches: ["main"]
     paths:
       - Dockerfile
       - .dockerignore
       - pkg-info.json
+      - .github/workflows/docker.yml
   pull_request:
     paths:
       - Dockerfile
       - .dockerignore
       - pkg-info.json
-    branches: ["main"]
+      - .github/workflows/docker.yml
 
 jobs:
   build:
-    uses: FirelightFlagboy/gh-actions-workflows-docker-services/.github/workflows/docker-build-publish.yml@aab594706e19dd4afe38efa7bbc4c3de33dff0b3
+    uses: FirelightFlagboy/gh-actions-workflows-docker-services/.github/workflows/docker-build-publish.yml@25d902f56f1e8b241e3b0fd1502e0c29e90870f6
     permissions:
       contents: read
       # This is used to complete the identity challenge
@@ -29,9 +32,9 @@ jobs:
       id-token: write
     with:
       docker-username: firelightflagbot
-      pkg-version: ${{ inputs.pkg-version || '1.8.6.3946' }}
+      pkg-version: ${{ inputs.pkg-version }}
       platforms: linux/amd64,linux/arm64
+      docker-repository: firelightflagbot/prowlarr
       registry: docker.io
-      tags: firelightflagbot/prowlarr:${{ inputs.pkg-version || '1.8.6.3946' }}
     secrets:
       docker-password: ${{ secrets.DOCKER_HUB_PAT }}
