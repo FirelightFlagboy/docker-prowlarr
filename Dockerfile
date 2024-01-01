@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.4
 
-FROM --platform=$BUILDPLATFORM alpine:3.18 as builder
+FROM --platform=$BUILDPLATFORM alpine:3.19 as builder
 
 COPY --link pkg-info.json /pkg-info.json
 
@@ -11,7 +11,7 @@ COPY --link in-docker-build.sh /build.sh
 
 RUN sh /build.sh
 
-FROM alpine:3.18
+FROM alpine:3.19
 
 ARG PKG_VERSION
 
