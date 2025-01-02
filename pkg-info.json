@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/FirelightFlagboy/gh-actions-workflows-docker-services/aab594706e19dd4afe38efa7bbc4c3de33dff0b3/pkg-info.schema.json",
   "name": "Prowlarr",
-  "latest_version": "1.27.0.4852",
+  "latest_version": "1.28.2.4885",
   "versions": {
     "1.10.5.4116": {
       "amd64": {
@@ -157,6 +157,18 @@
         "filename": "Prowlarr.master.1.27.0.4852.linux-musl-core-arm64.tar.gz",
         "download_url": "https://github.com/Prowlarr/Prowlarr/releases/download/v1.27.0.4852/Prowlarr.master.1.27.0.4852.linux-musl-core-arm64.tar.gz",
         "digest": "sha512:54fb4af126ba6b636a4274a5d1113679676e472bb6d4e6f138b06014bcd8d4658f3004ec94adc1d48687a7ef02c557a54fe8701b39a3fddb5afe0a0c986f1806"
+      }
+    },
+    "1.28.2.4885": {
+      "amd64": {
+        "filename": "Prowlarr.master.1.28.2.4885.linux-musl-core-x64.tar.gz",
+        "download_url": "https://github.com/Prowlarr/Prowlarr/releases/download/v1.28.2.4885/Prowlarr.master.1.28.2.4885.linux-musl-core-x64.tar.gz",
+        "digest": "sha512:dbb47b2553230f35d9bbec3c66d7c1d6405db9d757103d7b31557a91b31aab47d6d5fa10fda439fc5fdf455880cef44fccbcaff2290b383573bdb2b3377c799b"
+      },
+      "arm64": {
+        "filename": "Prowlarr.master.1.28.2.4885.linux-musl-core-arm64.tar.gz",
+        "download_url": "https://github.com/Prowlarr/Prowlarr/releases/download/v1.28.2.4885/Prowlarr.master.1.28.2.4885.linux-musl-core-arm64.tar.gz",
+        "digest": "sha512:b88820951e37f4bece6929d3b34cd38ca881cfb1e6912c280443feb8818abf75df6cf9230f75b08f225e8f825cbe4f2cd75051da2886c0076ca6a9e79f15afd3"
       }
     },
     "1.8.6.3946": {
